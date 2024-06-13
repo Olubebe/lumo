@@ -1,4 +1,4 @@
-import MaxWidthWrapper from "./MaxWidthWrapper";
+import MaxWidthWrapper from "../components/MaxWidthWrapper";
 import Link from "next/link";
 import Image from "next/image";
 import { buttonVariants } from "@/components/ui/button";
@@ -7,22 +7,21 @@ import { ArrowDownToLine, CheckCircle, Leaf } from "lucide-react";
 
 const perks = [
   {
-    name: "Instant Devlivery",
+    name: "Instant Delivery",
     Icon: ArrowDownToLine,
     description:
-      "Get your assets delivered to your email in seconds and download them right away",
+      "Assets delivered to your email instantly, ready for download.",
   },
   {
-    name: "Guarranteed Quality",
+    name: "Quality Guaranteed",
     Icon: CheckCircle,
     description:
-      "Every asset on our platform is verified by our team to ensure the highest quality standards",
+      "Our team rigorously verifies each asset, ensuring the highest quality standards.",
   },
   {
-    name: "For Our Planet",
+    name: "Eco-Friendly",
     Icon: Leaf,
-    description:
-      "Every asset on our platform is verified by our team to ensure the highest quality standards",
+    description: "Sustainable digital assets, helping preserve our planet.",
   },
 ];
 
@@ -36,8 +35,8 @@ export default function Home() {
             <span className="text-blue-600">digitial asset</span>.
           </h1>
           <p className="mt-6 text-lg max-w-prose text-muted-foreground">
-            Welcome to DigitialHippo. Every asset on our platform is verfied by
-            our team to ensure our hightest quality standards.
+            Welcome to DigitalLumo. Our team rigorously verifies every asset,
+            ensuring the highest quality standards are met.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mt-6">
             <Link href="/products" className={buttonVariants()}>
