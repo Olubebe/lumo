@@ -3,6 +3,7 @@ import MaxWidthWrapper from "./MaxWidthWrapper";
 import Link from "next/link";
 import NavItems from "./NavItems";
 import Cart from "./Cart";
+import MobileNav from "./MobileNav";
 import { buttonVariants } from "./ui/button";
 const Navbar = () => {
   const user = null;
@@ -12,6 +13,7 @@ const Navbar = () => {
         <MaxWidthWrapper>
           <div className="border-b border-gray-200">
             <div className="flex h-16 items-center">
+              <MobileNav />
               <div className="ml-4 flex lg-ml-0">
                 <Link href="/">DigitialLumo</Link>
               </div>
