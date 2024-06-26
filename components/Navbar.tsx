@@ -1,12 +1,14 @@
 // import { Icons } from "./Icons";
 import MaxWidthWrapper from "./MaxWidthWrapper";
+import { auth } from "@clerk/nextjs/server";
+import { UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 import NavItems from "./NavItems";
 import Cart from "./Cart";
 import MobileNav from "./MobileNav";
 import { buttonVariants } from "./ui/button";
 const Navbar = () => {
-  const user = null;
+  const { userId } = auth();
   return (
     <div className="bg-white sticky z-50 top-0 inset-x-0 h-16">
       <header className="relative bg-white">
@@ -22,7 +24,7 @@ const Navbar = () => {
               </div>
               <div className="ml-auto flex items-center">
                 <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                  {user ? (
+                  {userId ? (
                     ""
                   ) : (
                     <Link
@@ -32,13 +34,15 @@ const Navbar = () => {
                       Sign In
                     </Link>
                   )}
-                  {user ? (
+                  {userId ? (
                     ""
                   ) : (
                     <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
                   )}
-                  {user ? (
-                    <p></p>
+                  {userId ? (
+                    <p className="ml-4 flow-root lg:ml-6 items-center">
+                      <UserButton afterSignOutUrl="/" />
+                    </p>
                   ) : (
                     <Link
                       href="/sign-up"
@@ -47,10 +51,10 @@ const Navbar = () => {
                       Create Account
                     </Link>
                   )}
-                  {user ? (
+                  {userId ? (
                     <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
                   ) : null}
-                  {user ? null : (
+                  {userId ? null : (
                     <div className="flex lg:ml-6 ">
                       <span
                         className="h-6 w-px bg-gray-200"
